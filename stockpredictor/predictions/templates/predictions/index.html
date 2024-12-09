@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stock Predictor</title>
+</head>
+<style>
+    h1{
+        background-color:red;
+    }
+    body{
+        background-color: rgba(210, 105, 30, 0.38);
+    }
+</style>
+<body><center>
+    <h1 >Stock Price Prediction Using LSTM</h1>
+    <h2>Stock Prediction Form</h2>
+    <form method="post">
+        {% csrf_token %}
+        <label for="company">Select Company:</label>
+        <select name="company" id="company">
+            <option value="AAPL">Apple</option>
+            <option value="GOOGL">Google</option>
+            <option value="MSFT">Microsoft</option>
+            <option value="AMZN">Amazon</option>
+            <option value="META">Facebook</option>
+            <option value="NVDA">NVIDIA</option>
+            <!-- Add more companies as needed -->
+        </select><br><br>
+        <label for="open_price">Open Price:</label>
+        <input type="text" id="open_price" name="open_price"><br><br>
+        <label for="high_price">High Price:</label>
+        <input type="text" id="high_price" name="high_price"><br><br>
+        <label for="low_price">Low Price:</label>
+        <input type="text" id="low_price" name="low_price"><br><br>
+        <input type="submit" value="Predict">
+    </form>
+</center>
+</body>
+</html>

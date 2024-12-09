@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Result</title>
+    <style>
+    h1{
+        background-color:red;
+    }
+    body{
+        background-color: rgba(210, 105, 30, 0.38);
+    }
+</style>
+</head>
+<body><center>
+    <h1 >Stock Price Prediction Using LSTM</h1>
+    <h2>Prediction Result</h2>
+    <p>Company: {{ company_symbol }}</p>
+    <p>Open Price: {{ open_price }}</p>
+    <p>High Price: {{ high_price }}</p>
+    <p>Low Price: {{ low_price }}</p>
+    <p>Predicted Close Price: {{ predicted_close }}</p>
+    
+    <!-- Display plot image directly from binary data -->
+    <img src="data:image/png;base64,{{ plot_image }}" alt="Actual vs Predicted Plot">
+    
+    <p>Mean Squared Error: {{ mse }}</p>
+    <p>R² Value: {{ r2 }}</p>
+    
+    <button><a href="{% url 'prediction_values' %}">View Actual vs Predicted Values</a></button><br><br>
+   <button> <a href="{% url 'predict_stock' %}">Go Back</a></button>
+</center>
+</body>
+</html>
